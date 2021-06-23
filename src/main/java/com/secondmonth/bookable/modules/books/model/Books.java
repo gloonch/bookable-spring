@@ -2,13 +2,12 @@ package com.secondmonth.bookable.modules.books.model;
 
 import com.secondmonth.bookable.modules.users.model.Users;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Entity
+@Table(name = "book_table")
 public class Books {
 
 
@@ -23,8 +22,8 @@ public class Books {
     private LocalDateTime releaseDate;
 
 //    RELATIONS
-    @ManyToMany(mappedBy = "books")
-    private List<Users> users;
+//    @ManyToMany(mappedBy = "books")
+//    private List<Users> users;
 
 //    TODO more properties on book
 
@@ -68,12 +67,12 @@ public class Books {
     public void setReleaseDate(LocalDateTime releaseDate) {
         this.releaseDate = releaseDate;
     }
-
-    public List<Users> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<Users> users) {
-        this.users = users;
-    }
+//
+//    public List<Users> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<Users> users) {
+//        this.users = users;
+//    }
 }

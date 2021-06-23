@@ -39,8 +39,9 @@ public class Users {
 
 //    RELATIONS
 
-    @ManyToMany(mappedBy = "users")
-    private List<Books> books;
+//    @ManyToMany
+//    @JoinTable(name = "user_books")
+//    private List<Books> books;
 
     public Users() {
     }
@@ -115,11 +116,11 @@ public class Users {
         this.updatedAt = updatedAt;
     }
 
-    public List<Books> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Books> books) {
-        this.books = books;
-    }
+//    public List<Books> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Books> books) {
+//        this.books = books;
+//    }
 }
