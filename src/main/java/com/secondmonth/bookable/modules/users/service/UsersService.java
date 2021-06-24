@@ -23,18 +23,19 @@ public class UsersService {
     }
 
     public Users registerUser(Users users) throws IOException {
-//        getting image name
-        String path = ResourceUtils.getFile("classpath:static/images/").getPath();
-        byte[] bytes = users.getFile().getBytes();
-
-//        writing the particular data with a compatible system file separator based on the OS
-        Files.write(Paths.get(path + File.separator + users.getFile().getOriginalFilename()), bytes);
-        users.setCover(users.getFile().getOriginalFilename());
-
+//        TODO cannot be resolved to absolute file path because it does not exist
+////        getting image name
+//        String path = ResourceUtils.getFile("classpath:static/images/").getPath();
+//        byte[] bytes = users.getFile().getBytes();
+//
+////        writing the particular data with a compatible system file separator based on the OS
+//        Files.write(Paths.get(path + File.separator + users.getFile().getOriginalFilename()), bytes);
+//        users.setCover(users.getFile().getOriginalFilename());
         return usersRepository.save(users);
     }
 
-    public List<Users> findAll() {
+
+    public List<Users> findAllUsers() {
         return usersRepository.findAll();
     }
 }

@@ -20,4 +20,8 @@ public class BooksService {
     public List<Books> findAll() {
         return booksRepository.findAll();
     }
+
+    public Books registerBook(Books books) {
+        return booksRepository.save(books);
+    }
 }
